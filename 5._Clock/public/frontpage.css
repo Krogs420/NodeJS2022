@@ -1,11 +1,11 @@
 body {
-    background-color: pink;
+    background-color: rgb(250, 171, 184);
     font-family: 'Roboto', sans-serif;
     margin: 0;
 }
 
 p {
-    background-color: white;
+    background-color: pink;
     display: inline-flex;
     align-items: center;
     justify-content: center;
