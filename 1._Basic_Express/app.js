@@ -35,6 +35,21 @@ app.get("/actors", (req, res) => {
     });
 });
 
+//const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+//console.log(days[new Date().getDay()]);
+
+//console.log(new Date().getMonth());
+
+app.get("/date", (req, res) => {
+    const currentDate = 
+    console.log()
+});
+
+app.post("/actors", (req, res) => {
+    console.log(req.body);
+    res.send({data: req.body});
+});
+
 app.listen(8080, () => {
     console.log("Server is running on port", 8080);
 });
