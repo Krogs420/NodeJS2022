@@ -9,16 +9,29 @@ app.get("/", (req, res) => {
     res.sendFile(path.resolve("public/frontpage.html"));
 });
 
-app.get("/pokemon", (req, res) => {
-    res.send({ data: ["Slowpoke"] });
+app.get("/battle", (req, res) => {
+    res.sendFile(path.resolve("public/battle/battle.html"));
 });
 
-const pokemonList = [
-    {name: "Onion Turtle", id: 1},
-    {name: "Turtornator", id: 2},
-    {name: "Dreepy", id: 3}
-]
+app.get("/api/pokemon", (req, res) => {
+    fetch("https://pokeapi.co/api/v2/pokemon")
+    .then(response => response.json())
+    .then(result => res.send({ data : result }));
+});
 
-app.listen(8081, (error) => {
-    console.log("Server is running on port", 8081);
+
+console.log(undefined && 5);
+console.log(5 && 10);
+
+const PORT = process.env.PORT;
+
+console.log(process.env.PORT);
+
+
+
+const server = app.listen(8081, (error) => {
+    if (error) {
+        console.log(error);
+    }
+    console.log("Server is running on port", server.address().port);
 });
