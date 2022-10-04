@@ -50,8 +50,23 @@ app.post("/actors", (req, res) => {
     res.send({data: req.body});
 });
 
-app.listen(8080, () => {
-    console.log("Server is running on port", 8080);
+app.get("/lookunderbed", (req, res) => {
+    //res.send({ message: "Look under the bed" });
+
+    if (req.query.flashlight) {
+         return res.send({ message: "You are safe!" });
+    }
+    res.redirect("/monsters");
+});
+
+
+app.get("/monsters", (req, res) => {
+    res.send({ message: "You died" })
+});
+
+
+app.listen(8082, () => {
+    console.log("Server is running on port", 8082);
 });
 
 

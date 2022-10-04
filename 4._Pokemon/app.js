@@ -1,35 +1,46 @@
 import express from "express";
 const app = express();
 
-import path from "path";
-
 app.use(express.static("public"));
 
+import { renderPage, battlePage } from "./util/templateEngine.js";
+
+const frontpagePage = renderPage("/frontpage/frontpage.html", 
+{ 
+    tabTitle: "Pokemon", 
+    cssLink: `<link rel="stylesheet" href="/pages/frontpage/frontpage.css">` 
+});
+
+const contactPage = renderPage("/contact/contact.html");
+
 app.get("/", (req, res) => {
-    res.sendFile(path.resolve("public/frontpage.html"));
+    res.send(frontpagePage);
 });
 
 app.get("/battle", (req, res) => {
-    res.sendFile(path.resolve("public/battle/battle.html"));
+    const randomPokemon = "pikachu";
+    res.redirect(`battle/${randomPokemon}`);
+});
+
+app.get("/battle/:pokemonName", (req, res) => {
+    res.send(battlePage.replace("%%TAB_TITLE%%", `Battle ${req.params.pokemonName}`));
+});
+
+app.get("/contact", (req, res) => {
+    res.send(contactPage);
 });
 
 app.get("/api/pokemon", (req, res) => {
     fetch("https://pokeapi.co/api/v2/pokemon")
     .then(response => response.json())
-    .then(result => res.send({ data : result }));
+    .then(result => res.send({ data: result }));
 });
 
 
-console.log(undefined && 5);
-console.log(5 && 10);
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 8081;
 
-console.log(process.env.PORT);
-
-
-
-const server = app.listen(8081, (error) => {
+const server = app.listen(PORT, (error) => {
     if (error) {
         console.log(error);
     }
