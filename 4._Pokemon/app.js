@@ -3,7 +3,10 @@ const app = express();
 
 app.use(express.static("public"));
 
-import { renderPage, battlePage } from "./util/templateEngine.js";
+import pokemonRouter from "./routers/pokemonRoute.js";
+app.use(pokemonRouter);
+
+import { injectData, renderPage } from "./util/templateEngine.js";
 
 const frontpagePage = renderPage("/frontpage/frontpage.html", 
 { 
@@ -13,16 +16,22 @@ const frontpagePage = renderPage("/frontpage/frontpage.html",
 
 const contactPage = renderPage("/contact/contact.html");
 
+const battlePage = renderPage("/battle/battle.html", {
+    cssLink: `<link rel="stylesheet" href="/pages/battle/battle.css">`
+});
+
 app.get("/", (req, res) => {
     res.send(frontpagePage);
 });
 
 app.get("/battle", (req, res) => {
-    const randomPokemon = "pikachu";
-    res.redirect(`battle/${randomPokemon}`);
+    const randomPokemon = ["pikachu", "slowpoke", "ditto"];
+    res.redirect(`battle/${randomPokemon[Math.floor(Math.random() * randomPokemon.length)]}`);
 });
 
 app.get("/battle/:pokemonName", (req, res) => {
+    const pokemonName = req.params.pokemonName;
+    let battlePage = injectData(battlePage, pokemonName);
     res.send(battlePage.replace("%%TAB_TITLE%%", `Battle ${req.params.pokemonName}`));
 });
 
