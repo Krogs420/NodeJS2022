@@ -11,19 +11,54 @@ const frontpagePage = renderPage("/frontpage/frontpage.html",
     cssLink: `<link rel="stylesheet" href="/pages/main.css">` 
 });
 
-const loginPage = renderPage("/login/login.html");
-const ses1Page = renderPage("/session1/session1.html");
-const ses2Page = renderPage("/session2/session2.html");
-const ses3Page = renderPage("/session3/session3.html");
-const ses4Page = renderPage("/session4/session4.html");
-const ses5Page = renderPage("/session5/session5.html");
-const ses6Page = renderPage("/session6/session6.html");
-const ses7Page = renderPage("/session7/session7.html");
+const loginPage = renderPage("/login/login.html",
+{
+    tabTitle: "Login",
+    cssLink: `<link rel="stylesheet" href="/pages/main.css"`
+});
 
+const ses1Page = renderPage("/session1/session1.html", 
+{
+    tabTitle: "Week 1",
+    cssLink: `<link rel="stylesheet" href="/pages/main.css"`
+});
 
-/* const battlePage = renderPage("/battle/battle.html", {
-    cssLink: `<link rel="stylesheet" href="/pages/battle/battle.css">`
-}); */
+const ses2Page = renderPage("/session2/session2.html",
+{
+    tabTitle: "Week 2",
+    cssLink: `<link rel="stylesheet" href="/pages/main.css"`
+});
+
+const ses3Page = renderPage("/session3/session3.html",
+{
+    tabTitle: "Week 3",
+    cssLink: `<link rel="stylesheet" href="/pages/main.css"`
+});
+
+const ses4Page = renderPage("/session4/session4.html",
+{
+    tabTitle: "Week 4",
+    cssLink: `<link rel="stylesheet" href="/pages/main.css"`
+});
+
+const ses5Page = renderPage("/session5/session5.html",
+{
+    tabTitle: "Week 5",
+    cssLink: `<link rel="stylesheet" href="/pages/main.css"`
+});
+
+const ses6Page = renderPage("/session6/session6.html",
+{
+    tabTitle: "Week 6",
+    cssLink: `<link rel="stylesheet" href="/pages/main.css"`
+});
+
+const ses7Page = renderPage("/session7/session7.html",
+{
+    tabTitle: "Week 7",
+    cssLink: `<link rel="stylesheet" href="/pages/main.css"`
+});
+
 
 app.get("/", (req, res) => {
     res.send(frontpagePage);
@@ -38,27 +73,27 @@ app.get("/session1", (req, res) => {
 });
 
 app.get("/session2", (req, res) => {
-    res.send(ses1Page);
+    res.send(ses2Page);
 });
 
 app.get("/session3", (req, res) => {
-    res.send(ses1Page);
+    res.send(ses3Page);
 });
 
 app.get("/session4", (req, res) => {
-    res.send(ses1Page);
+    res.send(ses4Page);
 });
 
 app.get("/session5", (req, res) => {
-    res.send(ses1Page);
+    res.send(ses5Page);
 });
 
 app.get("/session6", (req, res) => {
-    res.send(ses1Page);
+    res.send(ses6Page);
 });
 
 app.get("/session7", (req, res) => {
-    res.send(ses1Page);
+    res.send(ses7Page);
 });
 
 

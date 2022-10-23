@@ -21,7 +21,8 @@ app.get("/weapons", (req, res) => {
 
 app.get("/weapons/:id", (req, res) => {
     const id = Number(req.params.id);
-    const weapon = weaponsList.find((singleWeapon) => singleWeapon.id === id);
+    const weapon = weaponsList.find((singleWeapon) => 
+    singleWeapon.id === id);
     res.send(weapon);
 });
 

@@ -24,7 +24,7 @@ console.log(result.toFixed(2))
 const anotherNumberOne = "1.10";
 const anotherNumberTwo = "2.30";
 
-const conv1= Number(anotherNumberOne);
+const conv1 = Number(anotherNumberOne);
 const conv2 = Number(anotherNumberTwo);
 const ex2Result = conv1 + conv2;
 

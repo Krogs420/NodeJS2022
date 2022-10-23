@@ -4,10 +4,10 @@ const navComponent = fs.readFileSync("./public/components/navbar/navbar.html").t
 const footerComponent = fs.readFileSync("./public/components/footer/footer.html").toString();
 
 export function renderPage(path, options = {}) {
-    const page = fs.readFileSync("./public/pages"+path).toString();
+    const page = fs.readFileSync("./public/pages" + path).toString();
 
     return navComponent
-        .replace("%%TAB_TITLE%%", options.tabTitle || "Pokemon")
+        .replace("%%TAB_TITLE%%", options.tabTitle || "Mandatory")
         .replace("%%PAGE_CSS_LINK%%",
             options.cssLink || ""
         ) 

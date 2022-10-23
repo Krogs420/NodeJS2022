@@ -1,5 +1,5 @@
 nav {
-    height: -20vh;
+    height: -60vh;
 }
 
 main {
@@ -8,4 +8,65 @@ main {
 
 footer {
     height: 4vh;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: #0d1117;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+div {
+    color: black;
+    text-align: center;
+}
+
+
+p {
+    margin: 16;
+    font-size: 12px;
+    color: lightgray;
+    text-align: left;
+    margin-left: 5%;
+    margin-right: 5%;
+    position: relative;
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+    margin-left: 20px;
+    color: #7e8892;
+    font-size: 24px;
+    font-weight: 400;
+    position: relative;
+}
+
+a:hover {
+    color: #ffffff
+}
+
+h1 {
+    margin: 35px;
+    font-size: 69px;
+    color: #c9d1d9;
+    text-align: center;
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+}
+
+h3 {
+    margin: 35px;
+    font-size: 30px;
+    color: #c9d1d9;
+    text-align: center;
+    font-weight: 400;
+    position: relative;
+    overflow: hidden;
 }
