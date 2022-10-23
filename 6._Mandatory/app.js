@@ -17,6 +17,12 @@ const loginPage = renderPage("/login/login.html",
     cssLink: `<link rel="stylesheet" href="/pages/main.css"`
 });
 
+const admin = renderPage("/admin/admin.html",
+{
+    tabTitle: "Admin",
+    cssLink: `<link rel="stylesheet" href="/pages/main.css"`
+});
+
 const ses1Page = renderPage("/session1/session1.html", 
 {
     tabTitle: "Week 1",
@@ -66,6 +72,10 @@ app.get("/", (req, res) => {
 
 app.get("/login", (req, res) => {
     res.send(loginPage);
+});
+
+app.get("/admin", (req, res) => {
+    res.send(admin);
 });
 
 app.get("/session1", (req, res) => {
