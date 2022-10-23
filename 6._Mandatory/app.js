@@ -1,7 +1,10 @@
 import express from "express";
+import loginRouter from "./routers/loginRouter.js";
 const app = express();
 
+app.use(express.json());
 app.use(express.static("public"));
+app.use(loginRouter);
 
 import { injectData, renderPage } from "./util/templateEngine.js";
 
@@ -107,8 +110,9 @@ app.get("/session7", (req, res) => {
 });
 
 
-
 const PORT = process.env.PORT || 8081;
+
+console.log(Number(process.env.PORT));
 
 const server = app.listen(PORT, (error) => {
     if (error) {

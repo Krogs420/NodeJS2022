@@ -1,31 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
+<h1>Login</h1>
+<form action="/admin" id="loginform" method="post">
 
-<head>
+    <div class="container">
+        <label class="p" for="username"><b>Username</b></label>
+        <input type="text" placeholder="Enter username" name="username" required>
+        <br>
+        <br>
+        <label class="p" for="password"><b>Password</b></label>
+        <input type="password" placeholder="Enter password" name="password" required>
+        <br>
+        <br>
+        <button type="submit" id="submit">Login</button>
+    </div>
+    <p id="wrongPassword"></p>
+</form>
 
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-</head>
+<script src="./pages/login/login.js"></script>
 
-<body>
-    <h1>Login</h1>
-    <form action="/admin" id="loginform" method="post">
-
-        <div class="container">
-            <label class="p" for="username"><b>Username</b></label>
-            <input type="text" placeholder="Enter username" name="username" required>
-            <br>
-            <br>
-            <label class="p" for="password"><b>Password</b></label>
-            <input type="password" placeholder="Enter password" name="password" required>
-            <br>
-            <br>
-            <button type="submit" id="submit">Login</button>
-        </div>
-        <p id="wrongPassword"></p>
-    </form>
-</body>
-
-</html>

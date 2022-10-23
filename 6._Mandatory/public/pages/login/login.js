@@ -17,8 +17,14 @@ async function getLogin() {
     sessionStorage.setItem("userId", data.data);
     window.location.replace("/admin");
   } else {
-    document.getElementById("wrongPassword").textContent = "Forkert email eller password"
+    document.getElementById("wrongPassword").textContent = "Wrong email or password"
   }
 }
 
 loginButton.addEventListener("click", getLogin);
+
+let session = sessionStorage.getItem("userId")
+console.log(session)
+if (session) {
+  window.location.replace("/admin");
+}
