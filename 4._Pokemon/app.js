@@ -13,11 +13,12 @@ import battleResultsRouter from "./routers/battleResultsRouter.js";
 app.use(battleResultsRouter);
 import contactRouter from "./routers/contactRouter.js";
 app.use(contactRouter);
+import sendMailRouter from "./routers/sendMailRouter.js";
+app.use(sendMailRouter);
 
 import { renderPage, injectData } from "./util/templateEngine.js";
 
-const frontpagePage = renderPage("/frontpage/frontpage.html", 
-{ 
+const frontpagePage = renderPage("/frontpage/frontpage.html", { 
     tabTitle: "Pokemon", 
     cssLink: `<link rel="stylesheet" href="/pages/frontpage/frontpage.css">` 
 });
@@ -27,6 +28,8 @@ const contactPage = renderPage("/contact/contact.html");
 const battlePage = renderPage("/battle/battle.html", {
     cssLink: `<link rel="stylesheet" href="/pages/battle/battle.css">` 
 });
+
+const sendMailPage = renderPage("/sendMail/sendMail.html");
 
 const battleResultsPage = renderPage("/battleResults/battleResults.html"); 
 
@@ -53,6 +56,10 @@ app.get("/battleResults", (req, res) => {
 app.get("/contact", (req, res) => {
     res.send(contactPage);
 });
+
+app.get("/mail", (req, res) => {
+    res.send(sendMailPage)
+})
 
 const PORT = process.env.PORT || 8081;
 
