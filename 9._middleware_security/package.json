@@ -1,0 +1,32 @@
+{
+  "name": "middleware_security",
+  "version": "0.0.1",
+  "description": "Defining middleware for Express and enhancing out server with security",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Krogs420/NodeJS2022.git"
+  },
+  "keywords": [
+    "express",
+    "security",
+    "middleware"
+  ],
+  "author": "Kristian Kryger",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Krogs420/NodeJS2022/issues"
+  },
+  "homepage": "https://github.com/Krogs420/NodeJS2022#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "express": "^4.18.2",
+    "express-rate-limit": "^6.6.0",
+    "express-session": "^1.17.3",
+    "helmet": "^6.0.0"
+  }
+}

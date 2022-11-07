@@ -3,7 +3,7 @@ import nodemailer from "nodemailer";
 
 const user = {
     mail: 'kristiankryger99@gmail.com',
-    password: 'qwertyuiop',
+    password: 'thfhleyqgernpueb',
 };
 
 const mailText = {
