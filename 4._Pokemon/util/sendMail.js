@@ -1,37 +1,29 @@
 import nodemailer from "nodemailer";
 
+async function main() {
+     let testAccount = await nodemailer.createTestAccount();
 
-const user = {
-    mail: 'kristiankryger99@gmail.com',
-    password: 'thfhleyqgernpueb',
-};
+     let transporter = nodemailer.createTransport({
+        host: "smtp.ethereal.email",
+        port: 587,
+        secure: false,
+        auth: {
+            user: testAccount.user,
+            pass: testAccount.pass,
+        },
+     });
 
-const mailText = {
-    text: 'This is a mail that has been send to you automatically',
-};
+     let info = await transporter.sendMail({
+        from: `"Flemming Flæskesværd" <kristianlaukryger@gmail.com>`,
+        to: "kristianlaukryger@gmail.com",
+        subject: "Yo yo yo whats puppin",
+        text: "Hello world? Or something idk seems to be the standard around here",
+        html: "<b>Hello there!</b>",
+     });
 
-const transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
-    auth: {
-        user: user.mail,
-        password: user.password,
-    }
-});
+     console.log("Message sent: %s", info.messageId);
 
-
-export function sendMail(mailReciever) {
-    return new Promise(async (resolve, reject) => {
-        try {
-            mail = await transporter.sendMail({
-                from: `"Mail test" <${user.mail}>`,
-                to: `${mailReciever.mail}`,
-                subject: `Whats up ${mailReciever.name}`,
-                text: mailText.text,
-                html: `<b>${mailText.text}</b>`,
-            });
-            resolve(mail);
-        } catch (err) {
-            reject("Error code 1");
-        }
-    });
+     console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
 }
+
+main();
