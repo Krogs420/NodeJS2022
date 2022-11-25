@@ -13,10 +13,9 @@ app.use(session({
 }));
 
 
-
 app.use(express.json());
 
-import usersRouter from "./routers/usersRouter.js";
+import usersRouter from "./routers/UsersRouter.js";
 app.use(usersRouter);
 
 app.get("/", (req, res) => {
@@ -24,7 +23,7 @@ app.get("/", (req, res) => {
     res.send();
 });
 
-import mailRouter from "./routers/mailRouter.js";
+import mailRouter from "./routers/MailRouter.js";
 app.use(mailRouter);
 
 
