@@ -28,7 +28,5 @@ import mailRouter from "./routers/mailRouter.js";
 app.use(mailRouter);
 
 
-
-
 const PORT = process.env.PORT || 8081;
 app.listen(PORT, () => console.log("Server is running on port", PORT));

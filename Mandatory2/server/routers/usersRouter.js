@@ -37,5 +37,12 @@ router.post("/api/users/login", async (req, res) => {
     }
 });
 
+router.get("/naruto", async (req, res) => {
+    const response = await fetch(`https://naruto-details-proxy.herokuapp.com/clan?name=uzumaki`);
+    const data = await response.json();
+    console.log(data);
+    res.send(data);
+});
+
 
 export default router;

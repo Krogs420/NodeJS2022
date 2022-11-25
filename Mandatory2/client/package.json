@@ -16,6 +16,7 @@
   "dependencies": {
     "flowbite-svelte": "^0.28.1",
     "svelte-navigator": "^3.2.2",
-    "svelte-use-form": "^2.4.3"
+    "svelte-use-form": "^2.4.3",
+    "toastr": "^2.1.4"
   }
 }

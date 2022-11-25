@@ -1,16 +1,5 @@
 <script>
-  async function getNaruto() {
-    const res = await fetch(`https://naruto-details.herokuapp.com/clan`);
-    const data = await res.json();
-    console.log(data);
-    if (res.ok) {
-      return data;
-    } else {
-      throw new Error(data);
-    }
-  }
-
-  let promise = getNaruto();
+ 
 </script>
 
 <body>
@@ -18,14 +7,7 @@
     <h1>Naruto</h1>
   </div>
   <div class="background-image">
-    <div class="container" />
   </div>
-
-  {#await promise}
-    <p>Here comes Naruto</p>
-  {:then data}
-    <div />
-  {/await}
 </body>
 
 <style>
@@ -41,15 +23,8 @@
 
   body {
     margin: 0;
+    -webkit-text-stroke: 1px white;
     font-family: "ninjanaruto", sans-serif;
-  }
-
-  .container {
-    max-width: 960px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
   }
 
   .background-image {
