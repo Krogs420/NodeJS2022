@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { sendMail } from "../util/sendMailRouter.js";
+import { sendMail } from "../util/sendMailRouter.js.js";
 const mailRouter = Router();
 
 mailRouter.post("/mail", (req, res) => {

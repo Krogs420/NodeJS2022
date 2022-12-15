@@ -1,0 +1,15 @@
+import { Router } from "express";
+const router = Router();
+
+
+router.get("/fetchMyUser", (req, res) => {
+    res.send({ data: req.session.username });
+
+});
+
+router.post("/registerMyUser", (req, res) => {
+    req.session.username = req.body.username;
+    res.send({ data: req.body.username });
+});
+
+export default router;

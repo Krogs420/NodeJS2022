@@ -1,0 +1,15 @@
+Relational database vs. mongodb
+
+
+Table       -       Collections
+Row         -       Document
+Columns     -       Key
+Cells       -       Value
+
+
+CRUD
+
+SELECT      -       find
+UPDATE      -       updateOne, updateMany ({ search criteria }, {$set { update criteria } } )
+INSERT      -       insertOne, insertMany
+DELETE      -       deleteOne, deleteMany
